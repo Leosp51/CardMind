@@ -4,32 +4,10 @@
              x:Class="CardMind.Views.ConquistasView"
              xmlns:models="clr-namespace:CardMind.Models"
              xmlns:vm="clr-namespace:CardMind.ViewModels"
+             xmlns:controls="clr-namespace:CardMind.Controls"
              x:DataType="vm:ConquistasViewModel">
     <VerticalStackLayout>
-        <Frame
-            HeightRequest="50"
-            BackgroundColor="Red"
-            >
-        <HorizontalStackLayout>
-            <Label
-                    Text="Olá, visitante!"
-                    FontSize="30"
-                    TextColor="White"/>
-            <Image
-                    Source="trofeu.png"/>
-            <Label
-                    Text="0"
-                    FontSize="20"/>
-            <Image
-                    Source="moeda.png"/>
-            <Label
-                    Text="0"
-                    FontSize="20"/>
-            <Image
-                    Source="brasil_linguagem.png"/>
-
-        </HorizontalStackLayout>
-        </Frame>
+        <controls:Header/>
         <Label
             Text="Conquistas"
             FontSize="30"

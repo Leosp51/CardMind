@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardMind.Views.BaralhosView"
              xmlns:models="clr-namespace:CardMind.Models"
+             xmlns:controls="clr-namespace:CardMind.Controls"
              Title="BaralhosView">
     <VerticalStackLayout
         Padding="10">
+        <controls:Header/>
         <Label
             Text="Baralhos"
             HorizontalOptions="Center"
