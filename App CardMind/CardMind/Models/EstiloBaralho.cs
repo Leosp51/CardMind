@@ -18,5 +18,6 @@ namespace CardMind.Models
             NomeEstilo = nomeEstilo;
             Valor = valor;
         }
+        public EstiloBaralho() { }
     }
 }

@@ -1,9 +1,14 @@
+using CardMind.ViewModels;
+
 namespace CardMind.Views;
 
 public partial class ConquistasView : ContentPage
 {
-	public ConquistasView()
+	private ConquistasViewModel viewModel;
+	public ConquistasView(ConquistasViewModel conquistasViewModel)
 	{
+		viewModel = conquistasViewModel;
+		BindingContext = viewModel;
 		InitializeComponent();
 	}
 }

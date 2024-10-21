@@ -7,8 +7,11 @@
     <VerticalStackLayout>
         <controls:Header/>
         <Label 
-            Text="Bem vindo a área de comunidade"
+            Text="Comunidade"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <SearchBar
+            WidthRequest="250"
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

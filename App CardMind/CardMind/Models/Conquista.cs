@@ -12,6 +12,7 @@ namespace CardMind.Models
         public string NomeConquista { get; set; }
         public string Objetivo { get; set; }
         public int Recompensa { get; set; }
+        public bool IsFinish { get; set; }
 
         public Conquista(int codConquista, string nomeConquista, string objetivo, int recompensa)
         {
@@ -20,5 +21,6 @@ namespace CardMind.Models
             Objetivo = objetivo;
             Recompensa = recompensa;
         }
+        public Conquista() { }
     }
 }

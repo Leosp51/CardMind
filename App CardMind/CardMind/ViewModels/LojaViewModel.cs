@@ -25,6 +25,30 @@ namespace CardMind.ViewModels
             Estilos = new();
             DinheiroUsuario = 0; 
             PegarEstilos();
+            Estilos.Add(new EstiloBaralho
+            {
+                CodEstilo = 1,
+                NomeEstilo = "Gato",
+                Valor = 10
+            });
+            Estilos.Add(new EstiloBaralho
+            {
+                CodEstilo = 2,
+                NomeEstilo = "Espacial",
+                Valor = 20
+            });
+            Estilos.Add(new EstiloBaralho
+            {
+                CodEstilo = 3,
+                NomeEstilo = "Rosa",
+                Valor = 10
+            });
+            Estilos.Add(new EstiloBaralho
+            {
+                CodEstilo = 4,
+                NomeEstilo = "Bege",
+                Valor = 20
+            });
         }
 
         public void PegarEstilos()
@@ -36,7 +60,7 @@ namespace CardMind.ViewModels
         }
 
         [RelayCommand]
-        public void comprarEstilo()
+        public void ComprarEstilo()
         {
             
         }

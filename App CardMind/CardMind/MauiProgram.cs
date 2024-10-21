@@ -57,6 +57,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<Login>();
             mauiAppBuilder.Services.AddTransient<HomeView>();
             mauiAppBuilder.Services.AddTransient<LojaView>();
+            mauiAppBuilder.Services.AddTransient<ConquistasView>();
             return mauiAppBuilder;
         }
     }
