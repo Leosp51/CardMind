@@ -1,4 +1,5 @@
 ﻿using CardMind.Services.Navigation;
+using CardMind.Views;
 
 namespace CardMind
 {
@@ -8,6 +9,7 @@ namespace CardMind
         public AppShell(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            Routing.RegisterRoute("Baralho", typeof(BaralhoView));
             InitializeComponent();
         }
     }
