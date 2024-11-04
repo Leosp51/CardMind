@@ -11,12 +11,6 @@ namespace CardMind.Models
         public string NomeCarta { get; set; }
         public int CodCarta { get; set; }
         public int CodBaralho { get; set; }
-
-        public Carta(string nomeCarta, int codCarta, int codBaralho)
-        {
-            NomeCarta = nomeCarta;
-            CodCarta = codCarta;
-            CodBaralho = codBaralho;
-        }
+        public string Tipo {  get; set; }
     }
 }

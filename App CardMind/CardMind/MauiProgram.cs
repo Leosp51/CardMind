@@ -1,4 +1,5 @@
 ﻿using CardMind.Services.ApiCardMind;
+using CardMind.Services.LocalServices;
 using CardMind.Services.Navigation;
 using CardMind.ViewModels;
 using CardMind.Views;
@@ -40,6 +41,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddSingleton<BaralhosService>();
             mauiAppBuilder.Services.AddSingleton<ConquistasService>();
             mauiAppBuilder.Services.AddSingleton<BaralhosService>();
+            mauiAppBuilder.Services.AddSingleton<SistemaRecompensaService>();
 
             return mauiAppBuilder;
         }

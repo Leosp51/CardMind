@@ -16,15 +16,17 @@
             <Image
             Source="trofeu.png"/>
             <Label
-            Text="0"
-            FontSize="15"
-            Margin="5"/>
+                TextColor="White"
+                Text="0"
+                FontSize="15"
+                Margin="5"/>
             <Image
             Source="moeda.png"/>
             <Label
-            Text="0"
-            FontSize="15"
-            Margin="5"/>
+                Text="0"
+                TextColor="White"
+                FontSize="15"
+                Margin="5"/>
             <Image
             Source="brasil_linguagem.png"/>
 

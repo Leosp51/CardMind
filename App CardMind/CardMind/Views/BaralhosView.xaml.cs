@@ -13,6 +13,8 @@ public partial class BaralhosView : ContentPage
 	{
 		baralhos = new ObservableCollection<Baralho>();
 		InitializeComponent();
+		CollectionBaralhos.SelectionMode = SelectionMode.Single;
+		CollectionBaralhos.SelectionChanged += BaralhoSelecionado;
 	}
 	public void PegarBaralhos()
 	{
@@ -29,5 +31,11 @@ public partial class BaralhosView : ContentPage
 			baralhos.Add(baralho);
 			CollectionBaralhos.ItemsSource = baralhos;
 		}
+	}
+	private void BaralhoSelecionado(Object sender, SelectionChangedEventArgs e)
+	{
+		string nomeBaralho = (e.CurrentSelection.FirstOrDefault() as Baralho).NomeBaralho;
+		string route = "Baralho?nome=" + nomeBaralho;
+		Shell.Current.GoToAsync(route);
 	}
 }

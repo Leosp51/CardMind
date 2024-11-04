@@ -5,8 +5,7 @@
              xmlns:models="clr-namespace:CardMind.Models"
              xmlns:controls="clr-namespace:CardMind.Controls"
              Title="BaralhosView">
-    <VerticalStackLayout
-        Padding="10">
+    <VerticalStackLayout>
         <controls:Header/>
         <Label
             Text="Baralhos"
@@ -33,7 +32,7 @@
                     <DataTemplate x:DataType="models:Baralho">
                         <HorizontalStackLayout Spacing="10" HeightRequest="50" WidthRequest="500">
                             <Frame
-                                BorderColor="White"
+                                BorderColor="Red"
                                 CornerRadius="15"
                                 Padding="5"
                                 WidthRequest="400">
