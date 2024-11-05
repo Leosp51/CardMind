@@ -4,9 +4,10 @@
              x:Class="CardMind.Views.BaralhosView"
              xmlns:models="clr-namespace:CardMind.Models"
              xmlns:controls="clr-namespace:CardMind.Controls"
-             Title="BaralhosView">
+             >
     <VerticalStackLayout>
-        <controls:Header/>
+        <controls:Header
+            x:Name="header"/>
         <Label
             Text="Baralhos"
             HorizontalOptions="Center"

@@ -4,7 +4,8 @@
              x:Class="CardMind.Views.ComunidadeView"
              xmlns:controls="clr-namespace:CardMind.Controls">
     <VerticalStackLayout>
-        <controls:Header/>
+        <controls:Header
+            x:Name="header"/>
         <Label 
             Text="Comunidade"
             VerticalOptions="Center" 

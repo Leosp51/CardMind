@@ -25,9 +25,13 @@
                 <Label
                     Text="Estilo"/>
                 <Frame BorderColor="Red">
-                    <Entry
-                        x:Name="EstiloEntry"
-                        Placeholder="Ex: Historia"/>
+                    <Picker x:Name="PickerEstilo">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Nenhum</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
                 </Frame>
             </VerticalStackLayout>
             <Button

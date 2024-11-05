@@ -1,6 +1,7 @@
 using CardMind.Models;
 using CardMind.Popups;
 using CardMind.Services.ApiCardMind;
+using CardMind.Services.LocalServices;
 using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
@@ -9,12 +10,15 @@ namespace CardMind.Views;
 public partial class BaralhosView : ContentPage
 {
 	private ObservableCollection<Baralho> baralhos;
+	private SistemaRecompensa sistemaRecompensa = new();
 	public BaralhosView()
 	{
 		baralhos = new ObservableCollection<Baralho>();
 		InitializeComponent();
+
 		CollectionBaralhos.SelectionMode = SelectionMode.Single;
 		CollectionBaralhos.SelectionChanged += BaralhoSelecionado;
+
 	}
 	public void PegarBaralhos()
 	{
@@ -32,10 +36,17 @@ public partial class BaralhosView : ContentPage
 			CollectionBaralhos.ItemsSource = baralhos;
 		}
 	}
-	private void BaralhoSelecionado(Object sender, SelectionChangedEventArgs e)
+	private async void BaralhoSelecionado(Object sender, SelectionChangedEventArgs e)
 	{
-		string nomeBaralho = (e.CurrentSelection.FirstOrDefault() as Baralho).NomeBaralho;
+		string nomeBaralho = (e.CurrentSelection.First() as Baralho).NomeBaralho;
 		string route = "Baralho?nome=" + nomeBaralho;
-		Shell.Current.GoToAsync(route);
+		await Shell.Current.GoToAsync(route);
 	}
+
+
+    protected override void OnAppearing()
+    {
+        header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
+        header.Trofeus = sistemaRecompensa.Trofeus.ToString();
+    }
 }

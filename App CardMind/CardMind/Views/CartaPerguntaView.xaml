@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CardMind.Views.CartaPerguntaView"
+             xmlns:controls="clr-namespace:CardMind.Controls">
+    <VerticalStackLayout>
+        <controls:Header
+            x:Name="header"/>
+        <Frame
+            Padding="10"
+            BorderColor="Red">
+            <VerticalStackLayout>
+                <Label
+                    x:Name="lbNomeCarta"
+                    FontSize="Large"
+                    FontAttributes="Bold"/>
+                <Frame
+                    Padding="2"
+                    BorderColor="Red">
+                    <Label
+                        x:Name="lbPergunta"
+                        FontSize="20"/>
+                </Frame>
+
+                <Button
+                    Text="VER RESPOSTAS"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    VerticalOptions="End"
+                    Clicked="Button_Clicked"
+                    Padding="5"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

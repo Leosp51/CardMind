@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CardMind.Models
 {
@@ -13,6 +14,7 @@ namespace CardMind.Models
         public string Objetivo { get; set; }
         public int Recompensa { get; set; }
         public bool IsFinish { get; set; }
+        public string Cor {  get; set; }
 
         public Conquista(int codConquista, string nomeConquista, string objetivo, int recompensa)
         {
@@ -22,5 +24,7 @@ namespace CardMind.Models
             Recompensa = recompensa;
         }
         public Conquista() { }
+
+        
     }
 }

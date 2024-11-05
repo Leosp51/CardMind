@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CardMind.Services.ApiCardMind;
+using System.Windows.Input;
 
 namespace CardMind.ViewModels
 {
@@ -31,7 +32,8 @@ namespace CardMind.ViewModels
                 NomeConquista = "Novato",
                 Objetivo = "Entre no app pela primeira vez",
                 Recompensa = 2,
-                IsFinish = true
+                IsFinish = true,
+                Cor = "Red"
             });
             Conquistas.Add(new Conquista
             {
@@ -39,7 +41,8 @@ namespace CardMind.ViewModels
                 NomeConquista = "Comprometimento",
                 Objetivo = "Entre no app 5 vezes em um único dia",
                 Recompensa = 5,
-                IsFinish = false
+                IsFinish = false,
+                Cor = "Gray"
             });
             Conquistas.Add(new Conquista
             {
@@ -47,7 +50,8 @@ namespace CardMind.ViewModels
                 NomeConquista = "Viciado",
                 Objetivo = "Entre no app 10 vezes em um único dia",
                 Recompensa = 10,
-                IsFinish = false
+                IsFinish = false,
+                Cor = "Gray"
             });
             Conquistas.Add(new Conquista
             {
@@ -55,13 +59,17 @@ namespace CardMind.ViewModels
                 NomeConquista = "Mestre da Criação",
                 Objetivo = "Crie 20 baralhos",
                 Recompensa = 2,
-                IsFinish = false
+                IsFinish = false,
+                Cor = "Red"
             });
         }
         public void HandleGetError()
         {
-            //coisas
+            
         }
+
+        public ICommand AumentarCommand;
+
 
     }
 }

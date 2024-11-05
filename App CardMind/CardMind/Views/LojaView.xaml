@@ -7,12 +7,16 @@
              xmlns:viewModel="clr-namespace:CardMind.ViewModels"
              x:DataType="viewModel:LojaViewModel">
     <VerticalStackLayout>
-        <controls:Header/>
+        <controls:Header
+            x:Name="header"/>
         <Label
             Text="Loja"
             FontSize="Medium"
             HorizontalOptions="Center"/>
-        <CollectionView ItemsSource="{Binding Estilos}" ItemsLayout="VerticalGrid, 2">
+        <CollectionView
+            x:Name="collectionEstilos"
+            SelectionMode="Single"
+            ItemsSource="{Binding Estilos}" ItemsLayout="VerticalGrid, 2">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:EstiloBaralho">
                     <VerticalStackLayout WidthRequest="100">
@@ -27,7 +31,7 @@
                         <Button
                             Text="{Binding Valor}"
                             FontSize="Micro"
-                            HeightRequest="30"
+                            HeightRequest="25"
                             CornerRadius="10"/>
                     </VerticalStackLayout>
                 </DataTemplate>

@@ -1,12 +1,16 @@
 using CardMind.Models;
 using CardMind.Popups;
+using CardMind.Services.LocalServices;
+using CardMind.Services.Navigation;
 using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
 namespace CardMind.Views;
 [QueryProperty(nameof(Nome),"nome")]
 public partial class BaralhoView : ContentPage
 {
+	private  INavigationService _navigationService;
 	string nome;
 	public string Nome
 	{
@@ -18,7 +22,10 @@ public partial class BaralhoView : ContentPage
 		}
 	}
 	private ObservableCollection<Carta> cartas;
-	public BaralhoView()
+
+	private SistemaRecompensa sistemaRecompensa = new();
+
+	public BaralhoView(INavigationService navigationService)
 	{
 		InitializeComponent();
 		//aplicar serviço do usuário
@@ -26,6 +33,7 @@ public partial class BaralhoView : ContentPage
 		CollectionCartas.ItemsSource = cartas;
 		CollectionCartas.SelectionMode = SelectionMode.Single;
 		CollectionCartas.SelectionChanged += CartaEscolhida;
+		this._navigationService = navigationService;
 	}
 
 	void UpdateUI()
@@ -48,7 +56,18 @@ public partial class BaralhoView : ContentPage
 		var escolha = e.CurrentSelection.FirstOrDefault() as Carta;
 		if (escolha != null) {
 			string route = escolha.Tipo == "Pergunta"? "CartaPergunta": "CartaTexto";
-			Shell.Current.GoToAsync(route);
+			_navigationService.NavigateToAsync(route, new Dictionary<string, object>()
+			{
+				{ route, escolha }
+			});
 		}
 	}
+	
+	protected override void OnAppearing()
+	{
+        header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
+        header.Trofeus = sistemaRecompensa.Trofeus.ToString();
+		
+    }
+	
 }

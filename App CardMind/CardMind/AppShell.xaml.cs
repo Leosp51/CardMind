@@ -10,8 +10,8 @@ namespace CardMind
         {
             _navigationService = navigationService;
             Routing.RegisterRoute("Baralho", typeof(BaralhoView));
-            Routing.RegisterRoute("CartaTexto", typeof(CartaTexto));
-            Routing.RegisterRoute("CartaPergunta",typeof(CartaPergunta));
+            Routing.RegisterRoute("CartaTexto", typeof(CartaTextoView));
+            Routing.RegisterRoute("CartaPergunta",typeof(CartaPerguntaView));
             InitializeComponent();
         }
     }
