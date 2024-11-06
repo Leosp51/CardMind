@@ -8,4 +8,9 @@ public partial class CompraInvalida : Popup
 	{
 		InitializeComponent();
 	}
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		Close();
+    }
 }

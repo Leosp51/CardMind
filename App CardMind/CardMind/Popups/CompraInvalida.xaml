@@ -5,14 +5,24 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
     <Frame
         BackgroundColor="White"
-        BorderColor="Red"
-        HeightRequest="50">
-        <VerticalStackLayout>
+        BorderColor="Red">
+        <VerticalStackLayout
+            Padding="10">
 
             <Label
                 Text="Compra Inválida"
                 FontSize="25"
+                FontAttributes="Bold"
             />
+            <Button
+                Text="OK"
+                TextColor="White"
+                FontSize="20"
+                BackgroundColor="Red"
+                Padding="5"
+                HeightRequest="50"
+                Clicked="Button_Clicked"
+                />
         </VerticalStackLayout>
         
     </Frame>

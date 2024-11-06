@@ -16,19 +16,31 @@ public partial class LojaView : ContentPage
 		_viewModel = lojaViewModel;
 		BindingContext = lojaViewModel;
 		InitializeComponent();
-	}
+        collectionEstilos.SelectionChanged += ConfirmacaoCompra;
+    }
 
-    private void ConfirmacaoCompra(Object sender, SelectionChangedEventArgs e)
+    private async void ConfirmacaoCompra(Object sender, SelectionChangedEventArgs e)
     {
-        int valorEstilo = (e.CurrentSelection.FirstOrDefault() as EstiloBaralho).Valor;
-        bool compraValida = sistemaRecompensa.ComprarEstilo(valorEstilo);
-        if (!compraValida) {
-            var popup = new CompraInvalida();
-            this.ShowPopup(popup);
-        }
+        EstiloBaralho estilo = (e.CurrentSelection.FirstOrDefault() as EstiloBaralho);
+        var result = await this.ShowPopupAsync(new RealizarCompra(estilo.Valor,estilo.NomeEstilo));
+
+        if (result != null)
+            if (!result.Equals(false))
+            {
+                UpdateHeader();
+            }
+            else
+            {
+                this.ShowPopup(new CompraInvalida());
+            }
     }
 
     protected override void OnAppearing()
+    {
+        UpdateHeader();
+    }
+
+    private void UpdateHeader()
     {
         header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
         header.Trofeus = sistemaRecompensa.Trofeus.ToString();
