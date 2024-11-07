@@ -7,7 +7,7 @@
         <controls:Header
             x:Name="header"/>
         <Frame
-            Padding="10"
+            Padding="50"
             BorderColor="Red">
             <VerticalStackLayout>
                 <Label

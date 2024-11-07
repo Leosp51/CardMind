@@ -26,17 +26,19 @@
 
         </HorizontalStackLayout>
         <ScrollView
-            Padding="45">
+            Padding="4">
             <CollectionView x:Name="CollectionBaralhos"
-                            WidthRequest="550">
+                            WidthRequest="400"
+                            HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Baralho">
-                        <HorizontalStackLayout Spacing="10" HeightRequest="50" WidthRequest="500">
+                        <HorizontalStackLayout Spacing="10" HeightRequest="50" WidthRequest="350">
                             <Frame
                                 BorderColor="Red"
                                 CornerRadius="15"
                                 Padding="5"
-                                WidthRequest="400">
+                                WidthRequest="350"
+                                MaximumHeightRequest="200">
                                 <HorizontalStackLayout>
                                     <Image
                                         Source="brasil_linguagem.png"
@@ -59,6 +61,5 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-
     </VerticalStackLayout>
 </ContentPage>

@@ -18,13 +18,13 @@
         <ScrollView
             Padding="10">
             <CollectionView ItemsSource="{Binding Conquistas}"
-                            WidthRequest="500">
+                            WidthRequest="300">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Conquista">
                         <Frame>
                             <HorizontalStackLayout>
                                 <Frame
-                                    WidthRequest="350"
+                                    WidthRequest="300"
                                     BorderColor="White">
                                     <HorizontalStackLayout>
                                         <Image
@@ -46,7 +46,7 @@
                                 <Button
                                     Text="Obter"
                                     FontSize="15"
-                                    BackgroundColor="{Binding Cor}"
+                                    BackgroundColor="Red"
                                     HeightRequest="30"
                                     CornerRadius="20"/>
                             </HorizontalStackLayout>

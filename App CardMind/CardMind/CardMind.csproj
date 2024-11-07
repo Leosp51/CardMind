@@ -68,6 +68,9 @@
 	  <None Remove="Resources\Images\comunidade.png" />
 	  <None Remove="Resources\Images\copas.png" />
 	  <None Remove="Resources\Images\espadas.png" />
+	  <None Remove="Resources\Images\estilo_estrela.png" />
+	  <None Remove="Resources\Images\estilo_gato.png" />
+	  <None Remove="Resources\Images\estilo_rosas.png" />
 	  <None Remove="Resources\Images\lapis_edicao.png" />
 	  <None Remove="Resources\Images\links.png" />
 	  <None Remove="Resources\Images\link_externo.png" />

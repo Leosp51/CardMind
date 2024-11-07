@@ -11,6 +11,7 @@ namespace CardMind.Models
         public int CodEstilo { get; set; }
         public string NomeEstilo { get; set; }
         public int Valor { get; set; }
+        public string Img {  get; set; }
 
         public EstiloBaralho(int codEstilo, string nomeEstilo, int valor)
         {

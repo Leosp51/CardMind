@@ -10,7 +10,7 @@
             Padding="10">
 
             <Label
-                Text="Compra Inválida"
+                Text="Você não tem dinheiro suficiente"
                 FontSize="25"
                 FontAttributes="Bold"
             />

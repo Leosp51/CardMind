@@ -8,8 +8,10 @@
         MinimumHeightRequest="200"
         MinimumWidthRequest="200"
         BackgroundColor="White">
-        <VerticalStackLayout>
-            <HorizontalStackLayout>
+        <VerticalStackLayout
+            >
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
                 <Label
                     x:Name="lbPergunta"
                     FontSize="20"
@@ -22,7 +24,8 @@
                     FontSize="20"
                     />
             </HorizontalStackLayout>
-            <HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
                 <Button
                     x:Name="btnSim"
                     Text="Sim"

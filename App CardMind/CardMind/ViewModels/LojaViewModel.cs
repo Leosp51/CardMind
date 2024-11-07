@@ -28,26 +28,31 @@ namespace CardMind.ViewModels
             Estilos.Add(new EstiloBaralho
             {
                 CodEstilo = 1,
-                NomeEstilo = "Gato",
-                Valor = 10
+                NomeEstilo = "Estrela",
+                Valor = 10,
+                Img = "estilo_estrela.png"
             });
             Estilos.Add(new EstiloBaralho
             {
                 CodEstilo = 2,
-                NomeEstilo = "Espacial",
-                Valor = 20
+                NomeEstilo = "Rosas",
+                Valor = 20,
+                Img = "estilo_rosas.png"
             });
             Estilos.Add(new EstiloBaralho
             {
                 CodEstilo = 3,
-                NomeEstilo = "Rosa",
-                Valor = 10
+                NomeEstilo = "Gato",
+                Valor = 10,
+                Img = "estilo_gato.png"
+
             });
             Estilos.Add(new EstiloBaralho
             {
                 CodEstilo = 4,
                 NomeEstilo = "Bege",
-                Valor = 20
+                Valor = 20,
+                Img = "moeda.png"
             });
         }
 

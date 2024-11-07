@@ -25,7 +25,7 @@
                             FontSize="Small"
                             HorizontalOptions="Center"/>
                         <Image
-                            Source="moeda.png"
+                            Source="{Binding Img}"
                             HeightRequest="100"
                             HorizontalOptions="Center"/>
                         <Button
