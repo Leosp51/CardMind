@@ -31,7 +31,7 @@
                         <Button
                             Text="{Binding Valor}"
                             FontSize="Micro"
-                            HeightRequest="25"
+                            HeightRequest="30"
                             CornerRadius="10"/>
                     </VerticalStackLayout>
                 </DataTemplate>

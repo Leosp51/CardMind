@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CardMind.Views.PerfilView">
+             x:Class="CardMind.Views.PerfilView"
+             xmlns:viewModels="clr-namespace:CardMind.ViewModels"
+             x:DataType="viewModels:PerfilViewModel">
     <VerticalStackLayout>
         <Frame
             BorderColor="Gray"
@@ -77,5 +79,13 @@
                 FontSize="Small"
                 HorizontalOptions="Center"/>
         </Frame>
+        <Button
+            Text="Teste"
+            HeightRequest="20"
+            FontSize="15"
+            Command="{Binding ShowPopupCommand}"/>
+        <Label
+            Text="{Binding NomeBaralho}"
+            FontSize="Large"/>
     </VerticalStackLayout>
 </ContentPage>

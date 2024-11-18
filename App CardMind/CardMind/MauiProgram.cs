@@ -52,6 +52,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddSingleton<CadastroViewModel>();
             mauiAppBuilder.Services.AddSingleton<ConquistasViewModel>();
             mauiAppBuilder.Services.AddSingleton<LojaViewModel>();
+            mauiAppBuilder.Services.AddSingleton<PerfilViewModel>();
             return mauiAppBuilder;
         }
         public static MauiAppBuilder RegistrarViews(this MauiAppBuilder mauiAppBuilder)
@@ -64,6 +65,8 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<BaralhoView>();
             mauiAppBuilder.Services.AddTransient<CartaTextoView>();
             mauiAppBuilder.Services.AddTransient<CartaPerguntaView>();
+            
+            mauiAppBuilder.Services.AddSingleton<PerfilView>();
             return mauiAppBuilder;
         }
     }
