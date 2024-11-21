@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardMind.Views.PerfilView"
              xmlns:viewModels="clr-namespace:CardMind.ViewModels"
-             x:DataType="viewModels:PerfilViewModel">
+             x:DataType="viewModels:PerfilViewModel"
+             Shell.NavBarIsVisible="False">
     <VerticalStackLayout>
+        
         <Frame
             BorderColor="Gray"
             BackgroundColor="#E0E0E0"
@@ -85,7 +87,21 @@
             FontSize="15"
             Command="{Binding ShowPopupCommand}"/>
         <Label
-            Text="{Binding NomeBaralho}"
-            FontSize="Large"/>
+            Text="{Binding ItemSelecionado}"/>
+        <CollectionView
+            ItemsSource="{Binding Nomes}"
+            SelectionMode="Single"
+            SelectedItem="{Binding Item}"
+            SelectionChangedCommand="{Binding BaralhoSelecionadoCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:RelativeSource Self}}"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label
+                        Text="{Binding .}"
+                        FontSize="20"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

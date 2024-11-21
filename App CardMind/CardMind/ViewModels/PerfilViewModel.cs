@@ -19,17 +19,21 @@ namespace CardMind.ViewModels
         public string nomeBaralho = "Nome do Baralho";
         [ObservableProperty]
         public ObservableCollection<string> nomes = new ObservableCollection<string>();
+        [ObservableProperty]
+        public string itemSelecionado = "nenhum";
+        [ObservableProperty]
+        public string item = "a" ;
         
         private INavigationService navigationService;
 
         [RelayCommand]
-        public async void ShowPopup()
+        public async Task ShowPopup()
         {
             var popup = new CriarBaralho();
             var result = await Shell.Current.CurrentPage.ShowPopupAsync(popup);
             if (result != null) {
                 var baralho = (Baralho)result;
-                NomeBaralho = baralho.NomeBaralho;
+                Nomes.Add(baralho.NomeBaralho);
             }
         }
         public PerfilViewModel(INavigationService navigationService)
@@ -38,9 +42,12 @@ namespace CardMind.ViewModels
             this.navigationService = navigationService;
 
         }
-
+        [RelayCommand]
         private async Task BaralhoSelecionado(string nome)
         {
+            ItemSelecionado = nome;
+            Item = "a";
+
             await navigationService.NavigateToAsync("Baralho",
                 new Dictionary<string, object>
                 {

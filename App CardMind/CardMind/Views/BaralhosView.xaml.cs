@@ -2,6 +2,7 @@ using CardMind.Models;
 using CardMind.Popups;
 using CardMind.Services.ApiCardMind;
 using CardMind.Services.LocalServices;
+using CardMind.ViewModels;
 using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
@@ -11,11 +12,12 @@ public partial class BaralhosView : ContentPage
 {
 	private ObservableCollection<Baralho> baralhos;
 	private SistemaRecompensa sistemaRecompensa = new();
-	public BaralhosView()
+	public BaralhosView(BaralhosViewModel baralhosViewModel)
 	{
+
 		baralhos = new ObservableCollection<Baralho>();
 		InitializeComponent();
-
+		BindingContext = baralhosViewModel;
 		CollectionBaralhos.SelectionMode = SelectionMode.Single;
 		CollectionBaralhos.SelectionChanged += BaralhoSelecionado;
 
