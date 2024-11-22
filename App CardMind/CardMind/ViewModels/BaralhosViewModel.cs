@@ -25,6 +25,10 @@ namespace CardMind.ViewModels
         public ObservableCollection<Baralho> baralhos;
         [ObservableProperty]
         public Baralho item = new();
+        [ObservableProperty]
+        public string dinheiro = "0";
+        [ObservableProperty]
+        public string trofeus = "0";
 
         private readonly IPopupService popupService;
         private BaralhosService baralhosService;
@@ -60,6 +64,13 @@ namespace CardMind.ViewModels
             this.navigationService = navigationService;
             this.popupService = popupService;
             this.baralhosService = baralhosService;
+
+            baralhos.Add(new Baralho
+            {
+                NomeBaralho="Trabalho"
+            });
+            Dinheiro = sistemaRecompensa.Dinheiro.ToString();
+            Trofeus = sistemaRecompensa.Trofeus.ToString();
         }
     }
 }

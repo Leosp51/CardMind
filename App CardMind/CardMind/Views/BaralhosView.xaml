@@ -4,10 +4,14 @@
              x:Class="CardMind.Views.BaralhosView"
              xmlns:models="clr-namespace:CardMind.Models"
              xmlns:controls="clr-namespace:CardMind.Controls"
+             xmlns:viewmodel="clr-namespace:CardMind.ViewModels"
+             x:DataType="viewmodel:BaralhosViewModel"
              >
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"/>
+            x:Name="header"
+            Dinheiro="{Binding Dinheiro}"
+            Trofeus="{Binding Trofeus}"/>
         <Label
             Text="Baralhos"
             HorizontalOptions="Center"
@@ -22,12 +26,17 @@
                 HeightRequest="40"
                 WidthRequest="40"
                 CornerRadius="10"
-                Clicked="ImageButton_Clicked"/>
+                Command="{Binding ShowPopupCommand}"/>
 
         </HorizontalStackLayout>
         <ScrollView
             Padding="4">
             <CollectionView x:Name="CollectionBaralhos"
+                            SelectionMode="Single"
+                            ItemsSource="{Binding Baralhos}"
+                            SelectedItem="{Binding Item}"
+                            SelectionChangedCommand="{Binding BaralhoSelecionadoCommand}"
+                            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:RelativeSource Self}}"
                             WidthRequest="400"
                             HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
