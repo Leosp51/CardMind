@@ -97,9 +97,14 @@
             >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label
-                        Text="{Binding .}"
-                        FontSize="20"/>
+                    <HorizontalStackLayout
+                        >
+                        <Border>
+                            <Label
+                            Text="{Binding .}"
+                            FontSize="20"/>
+                        </Border>
+                    </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

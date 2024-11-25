@@ -9,9 +9,7 @@
              >
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"
-            Dinheiro="{Binding Dinheiro}"
-            Trofeus="{Binding Trofeus}"/>
+            x:Name="header"/>
         <Label
             Text="Baralhos"
             HorizontalOptions="Center"
@@ -33,21 +31,24 @@
             Padding="4">
             <CollectionView x:Name="CollectionBaralhos"
                             SelectionMode="Single"
-                            ItemsSource="{Binding Baralhos}"
+                            ItemsSource="{Binding NomesBaralhos}"
                             SelectedItem="{Binding Item}"
                             SelectionChangedCommand="{Binding BaralhoSelecionadoCommand}"
                             SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:RelativeSource Self}}"
                             WidthRequest="400"
                             HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Baralho">
+                    <DataTemplate>
                         <HorizontalStackLayout Spacing="10" HeightRequest="50" WidthRequest="350">
-                            <Frame
-                                BorderColor="Red"
-                                CornerRadius="15"
+                            <Border
+                                Stroke="Red"
+                                StrokeThickness="4"
                                 Padding="5"
                                 WidthRequest="350"
                                 MaximumHeightRequest="200">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,20,20,20"/>
+                                </Border.StrokeShape>
                                 <HorizontalStackLayout>
                                     <Image
                                         Source="brasil_linguagem.png"
@@ -55,16 +56,11 @@
                                         HeightRequest="50"
                                         WidthRequest="50"/>
                                     <Label
-                                        Text="{Binding NomeBaralho}"
+                                        Text="{Binding .}"
                                         FontSize="25"
                                         />
                                 </HorizontalStackLayout>
-                            </Frame>
-                            <Button
-                                Text=">"
-                                BackgroundColor="White"
-                                BorderColor="White"
-                                FontSize="15"/>
+                            </Border>
                         </HorizontalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

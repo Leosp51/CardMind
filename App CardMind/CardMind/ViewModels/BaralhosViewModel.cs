@@ -24,11 +24,11 @@ namespace CardMind.ViewModels
         [ObservableProperty]
         public ObservableCollection<Baralho> baralhos;
         [ObservableProperty]
-        public Baralho item = new();
+        public string item = "a";
         [ObservableProperty]
-        public string dinheiro = "0";
-        [ObservableProperty]
-        public string trofeus = "0";
+        public ObservableCollection<string> nomesBaralhos = new ObservableCollection<string>();
+
+        public Dictionary<string,Baralho> data = new Dictionary<string,Baralho>();
 
         private readonly IPopupService popupService;
         private BaralhosService baralhosService;
@@ -44,16 +44,18 @@ namespace CardMind.ViewModels
             {
                 var baralho = (Baralho)result;
                 Baralhos.Add(baralho);
+                NomesBaralhos.Add(baralho.NomeBaralho);
+                data.TryAdd(baralho.NomeBaralho, baralho);
             }
         }
         [RelayCommand]
-        public async Task BaralhoSelecionado(Baralho baralho)
+        public async Task BaralhoSelecionado(string nomeBaralho)
         {
-            Item = new();
+            Item = "a";
             await navigationService.NavigateToAsync("Baralho",
                 new Dictionary<string, object>
                 {
-                    {"nome", baralho.NomeBaralho}
+                    {"nome", nomeBaralho}
                 });
         }
         public BaralhosViewModel(IPopupService popupService,
@@ -65,12 +67,7 @@ namespace CardMind.ViewModels
             this.popupService = popupService;
             this.baralhosService = baralhosService;
 
-            baralhos.Add(new Baralho
-            {
-                NomeBaralho="Trabalho"
-            });
-            Dinheiro = sistemaRecompensa.Dinheiro.ToString();
-            Trofeus = sistemaRecompensa.Trofeus.ToString();
         }
+
     }
 }

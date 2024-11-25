@@ -29,11 +29,14 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Carta">
                     <HorizontalStackLayout Spacing="10" HeightRequest="50" WidthRequest="500">
-                            <Frame
-                                BorderColor="Red"
-                                CornerRadius="15"
+                            <Border
+                                Stroke="Red"
+                                StrokeThickness="4"
                                 Padding="5"
                                 WidthRequest="400">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20,20,20,20"/>
+                            </Border.StrokeShape>
                                 <HorizontalStackLayout>
                                     <Image
                                         Source="brasil_linguagem.png"
@@ -45,7 +48,7 @@
                                         FontSize="25"
                                         />
                                 </HorizontalStackLayout>
-                            </Frame>
+                            </Border>
                         </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

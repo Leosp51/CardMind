@@ -20,5 +20,6 @@ namespace CardMind.Models
             Valor = valor;
         }
         public EstiloBaralho() { }
+        
     }
 }

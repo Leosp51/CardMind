@@ -21,10 +21,12 @@
                             WidthRequest="300">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Conquista">
-                        <Frame>
+                        <Border
+                            Stroke="Gray"
+                            StrokeThickness="2">
                             <HorizontalStackLayout>
                                 <Frame
-                                    WidthRequest="300"
+                                    WidthRequest="200"
                                     BorderColor="White">
                                     <HorizontalStackLayout>
                                         <Image
@@ -47,11 +49,12 @@
                                     Text="Obter"
                                     FontSize="15"
                                     BackgroundColor="Red"
-                                    HeightRequest="30"
-                                    CornerRadius="20"/>
+                                    HeightRequest="40"
+                                    CornerRadius="20"
+                                    />
                             </HorizontalStackLayout>
 
-                        </Frame>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
