@@ -10,11 +10,14 @@ using System.Windows.Input;
 using CardMind.Models;
 using CardMind.Services;
 using CardMind.Services.ApiCardMind;
+using CardMind.Services.Navigation;
 
 namespace CardMind.ViewModels
 {
     public partial class CadastroViewModel : ObservableObject
     {
+        private INavigationService _navigationService;
+
         [ObservableProperty]
         public Usuario usuario = new();
         [ObservableProperty]
@@ -28,9 +31,10 @@ namespace CardMind.ViewModels
 
         private UsuarioService usuarioService;
 
-        public CadastroViewModel(UsuarioService usuarioService)
+        public CadastroViewModel(UsuarioService usuarioService,INavigationService navigationService)
         {
             this.usuarioService = usuarioService;
+            this._navigationService = navigationService;
         }
         //[RelayCommand]
         public void Adicionar(Usuario user)
@@ -74,6 +78,7 @@ namespace CardMind.ViewModels
             }
             Validado = valido;
         */
+            _navigationService.NavigateToAsync("//Menu/Home");
         }
     }
 }

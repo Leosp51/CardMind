@@ -49,6 +49,7 @@
                                     Text="Obter"
                                     FontSize="15"
                                     BackgroundColor="Red"
+                                    
                                     HeightRequest="40"
                                     CornerRadius="20"
                                     />

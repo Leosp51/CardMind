@@ -10,7 +10,7 @@ namespace CardMind.Services.LocalServices
     {
         private static int dinheiro=100;
         private static int trofeus=0;
-        public int Dinheiro { get => dinheiro; set=>dinheiro = value; }
+        public int Dinheiro { get => dinheiro; set=> dinheiro = value; }
         public int Trofeus { get => trofeus; set => trofeus = value; }
 
         public SistemaRecompensa()

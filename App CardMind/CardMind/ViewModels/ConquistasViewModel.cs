@@ -68,8 +68,10 @@ namespace CardMind.ViewModels
             
         }
 
-        public ICommand AumentarCommand;
+        public void GanharRecompensa(Conquista conquista)
+        {
 
+        }
 
     }
 }

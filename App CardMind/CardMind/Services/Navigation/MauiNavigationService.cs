@@ -13,6 +13,7 @@ namespace CardMind.Services.Navigation
             bool primeiraVez = Preferences.Default.Get<bool>("primeiraVez", true);
             if (primeiraVez) {
                 Preferences.Set("primeiraVez",false);
+                NavigateToAsync("//Cadastro");
             }
             return NavigateToAsync(
                     primeiraVez? "//Login":"//Menu/Home"

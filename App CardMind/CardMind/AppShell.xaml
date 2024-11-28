@@ -17,6 +17,10 @@
             ContentTemplate="{DataTemplate views:Login}"
             Route="Login"
             />
+        <ShellContent
+            x:Name="cadastrar"
+            ContentTemplate="{DataTemplate views:CadastroView}"
+            Route="Cadastro"/>
     </FlyoutItem>
 
     <TabBar

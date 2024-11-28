@@ -8,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CardMind.Services.ApiCardMind;
+using CardMind.Services.LocalServices;
 
 namespace CardMind.ViewModels
 {
     public partial class LojaViewModel: ObservableObject
     {
         private EstilosServico estilosServico;
-        
+        private SistemaRecompensa sistemaRecompensa = new();
+
         [ObservableProperty]
         public ObservableCollection<EstiloBaralho> estilos;
         [ObservableProperty]
