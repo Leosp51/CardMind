@@ -36,6 +36,12 @@ namespace CardMind.ViewModels
                 Nomes.Add(baralho.NomeBaralho);
             }
         }
+        [RelayCommand]
+        public async Task Logout()
+        {
+            await navigationService.NavigateToAsync("//Login");
+        }
+
         public PerfilViewModel(INavigationService navigationService)
         {
             Nomes.Add(NomeBaralho);

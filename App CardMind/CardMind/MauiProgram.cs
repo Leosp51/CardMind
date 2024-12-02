@@ -63,7 +63,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<LojaView>();
             mauiAppBuilder.Services.AddTransient<ConquistasView>();
             mauiAppBuilder.Services.AddTransient<Testes>();
-            mauiAppBuilder.Services.AddTransient<BaralhoView>();
+            mauiAppBuilder.Services.AddSingleton<BaralhoView>();
             mauiAppBuilder.Services.AddTransient<CartaTextoView>();
             mauiAppBuilder.Services.AddTransient<CartaPerguntaView>();
             mauiAppBuilder.Services.AddTransient<CadastroView>();

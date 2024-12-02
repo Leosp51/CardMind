@@ -14,7 +14,7 @@
                 HorizontalOptions="Center">
                 <Label
                     x:Name="lbPergunta"
-                    FontSize="20"
+                    FontSize="Small"
                     />
                 <Image
                     Source="moeda.png"
@@ -32,14 +32,17 @@
                     BackgroundColor="Red"
                     TextColor="White"
                     FontSize="Medium"
-                    Padding="5"/>
+                    Padding="5"
+                    Margin="15"
+                    />
                 <Button
                     x:Name="btnNao"
                     Text="Não"
                     BackgroundColor="Red"
                     TextColor="White"
                     FontSize="Medium"
-                    Padding="5"/>
+                    Padding="5"
+                    Margin="15"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </Frame>

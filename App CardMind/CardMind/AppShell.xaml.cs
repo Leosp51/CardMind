@@ -12,6 +12,7 @@ namespace CardMind
             Routing.RegisterRoute("Baralho", typeof(BaralhoView));
             Routing.RegisterRoute("CartaTexto", typeof(CartaTextoView));
             Routing.RegisterRoute("CartaPergunta",typeof(CartaPerguntaView));
+            Routing.RegisterRoute("CartaResposta", typeof(CartaResposta));
             InitializeComponent();
         }
         protected override async void OnParentSet()

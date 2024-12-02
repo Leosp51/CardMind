@@ -38,10 +38,17 @@
             FontSize="Small"
             TextColor="Red"
             />
+        
         <Button
             Text="Fazer Login"
             BackgroundColor="Red"
             Command="{Binding SignInCommand}"
             />
+        <Label
+            Margin="5"
+            TextColor="Red"
+            FontSize="Small"
+            Text="{Binding Erro}"/>
+        
     </VerticalStackLayout>
 </ContentPage>

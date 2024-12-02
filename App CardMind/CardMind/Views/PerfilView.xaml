@@ -70,14 +70,18 @@
                 FontSize="Small"
                 HorizontalOptions="Center"/>
         </Frame>
-        <Frame Margin="5"
+        <Border Margin="5"
                BackgroundColor="#E0E0E0"
-               BorderColor="Gray">
-            <Label
+               Stroke="Gray">
+            <Button
                 Text="Sair"
                 FontSize="Small"
-                HorizontalOptions="Center"/>
-        </Frame>
+                HorizontalOptions="Center"
+                BackgroundColor="Gray"
+                TextColor="White"
+                HeightRequest="500"
+                Command="{Binding LogoutCommand}"/>
+        </Border>
         
     </VerticalStackLayout>
 </ContentPage>

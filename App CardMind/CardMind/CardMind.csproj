@@ -132,6 +132,9 @@
 	  <MauiXaml Update="Views\CartaPerguntaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\CartaResposta.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CartaTextoView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

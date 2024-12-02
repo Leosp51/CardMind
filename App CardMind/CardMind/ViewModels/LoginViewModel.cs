@@ -19,12 +19,16 @@ namespace CardMind.ViewModels
         public string email;
         [ObservableProperty]
         public string password;
+        [ObservableProperty]
+        public string erro = "";
 
         [RelayCommand]
         public async Task SignIn()
         {
-            //await usuarioService.Autenticar("email", "senha");
-            await navigationService.NavigateToAsync("//Menu/Home");
+            if (Email == "lucas@gmail.com" && Password == "123")
+                await navigationService.NavigateToAsync("//Menu/Home");
+            else
+                Erro = "Email ou senha inconrretos";
         }
         public LoginViewModel(INavigationService navigationService, UsuarioService usuarioService)
         {
