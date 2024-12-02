@@ -24,9 +24,6 @@
                     Text="Lucas"
                     FontSize="Micro"/>
                 <Label
-                    Text="Conta Criada em 10/01/01"
-                    HorizontalOptions="End"/>
-                <Label
                     Text="E-mail"
                     FontSize="Small"/>
                 <Label
@@ -81,32 +78,6 @@
                 FontSize="Small"
                 HorizontalOptions="Center"/>
         </Frame>
-        <Button
-            Text="Teste"
-            HeightRequest="20"
-            FontSize="15"
-            Command="{Binding ShowPopupCommand}"/>
-        <Label
-            Text="{Binding ItemSelecionado}"/>
-        <CollectionView
-            ItemsSource="{Binding Nomes}"
-            SelectionMode="Single"
-            SelectedItem="{Binding Item}"
-            SelectionChangedCommand="{Binding BaralhoSelecionadoCommand}"
-            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:RelativeSource Self}}"
-            >
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <HorizontalStackLayout
-                        >
-                        <Border>
-                            <Label
-                            Text="{Binding .}"
-                            FontSize="20"/>
-                        </Border>
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        
     </VerticalStackLayout>
 </ContentPage>

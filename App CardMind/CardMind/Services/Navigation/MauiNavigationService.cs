@@ -8,16 +8,22 @@ namespace CardMind.Services.Navigation
 {
     public class MauiNavigationService : INavigationService
     {
-        public Task InitializeAsync()
+        public async Task<Task> InitializeAsync()
         {
             bool primeiraVez = Preferences.Default.Get<bool>("primeiraVez", true);
-            if (primeiraVez) {
-                Preferences.Set("primeiraVez",false);
-                NavigateToAsync("//Cadastro");
+            bool logado = Preferences.Default.Get<bool>("logado", false);
+
+            if (primeiraVez)
+            {
+                Preferences.Set("primeiraVez", false);
+                return NavigateToAsync("//Cadastro");
             }
-            return NavigateToAsync(
-                    primeiraVez? "//Login":"//Menu/Home"
-                );
+            if (!logado)
+            {
+                return NavigateToAsync("//Login");
+            }
+            else
+                return NavigateToAsync("//Menu/Home");
         }
 
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)

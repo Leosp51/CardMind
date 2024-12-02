@@ -14,5 +14,13 @@ namespace CardMind
             Routing.RegisterRoute("CartaPergunta",typeof(CartaPerguntaView));
             InitializeComponent();
         }
+        protected override async void OnParentSet()
+        {
+            base.OnParentSet();
+            if (Parent is not null)
+            {
+                await _navigationService.InitializeAsync();
+            }
+        }
     }
 }

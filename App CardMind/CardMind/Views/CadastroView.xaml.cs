@@ -4,8 +4,9 @@ namespace CardMind.Views;
 
 public partial class CadastroView : ContentPage
 {
-	public CadastroView()
+	public CadastroView(CadastroViewModel cadastroViewModel)
 	{
+		BindingContext = cadastroViewModel;
 	}
 
 	private async void Entrar(object sender, EventArgs e)

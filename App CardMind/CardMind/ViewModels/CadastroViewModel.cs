@@ -43,7 +43,7 @@ namespace CardMind.ViewModels
         }
         [RelayCommand]
         public void Validar()
-        {/*
+        {
             bool valido = true;
             Message = string.Empty;
             if (Usuario.NomeUsuario == null || Usuario.Email == null || Usuario.Senha == null || ConfirmarSenha == null)
@@ -73,12 +73,12 @@ namespace CardMind.ViewModels
             
             if (valido)
             {
-                var result = usuarioService.postUser(Usuario);
+
+                _navigationService.NavigateToAsync("//Menu/Home");
                 //verificar se o post ocorreu como esperado
             }
             Validado = valido;
-        */
-            _navigationService.NavigateToAsync("//Menu/Home");
+        
         }
     }
 }
