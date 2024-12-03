@@ -44,6 +44,8 @@ namespace CardMind
             mauiAppBuilder.Services.AddSingleton<BaralhosService>();
             mauiAppBuilder.Services.AddSingleton<SistemaRecompensa>();
 
+            mauiAppBuilder.Services.AddSingleton<BaralhosLocalService>();
+
             return mauiAppBuilder;
         }
         public static MauiAppBuilder RegistrarViewModels(this MauiAppBuilder mauiAppBuilder)
