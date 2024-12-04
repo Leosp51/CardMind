@@ -4,14 +4,25 @@
              x:Class="CardMind.Views.BaralhoView"
              xmlns:controls ="clr-namespace:CardMind.Controls"
              xmlns:models ="clr-namespace:CardMind.Models"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             xmlns:vm="clr-namespace:CardMind.ViewModels"
+             x:DataType="vm:BaralhoViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"/>
+            x:Name="header"
+            Dinheiro="{Binding DinheiroUsuario}"
+            Trofeus="{Binding TrofeusUsuario}"/>
         <Label
             x:Name="Name"
             FontSize="20"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            Text="{Binding NomeBaralho}"/>
         <HorizontalStackLayout
             HorizontalOptions="Center">
             <SearchBar
@@ -21,10 +32,14 @@
                 HeightRequest="40"
                 WidthRequest="40"
                 CornerRadius="10"
-                Clicked="ImageButton_Clicked"/>
+                Command="{Binding CriarCartaCommand}"/>
         </HorizontalStackLayout>
         <CollectionView
             x:Name="CollectionCartas"
+            SelectionMode="Single"
+            ItemsSource="{Binding Cartas}"
+            SelectionChangedCommand="{Binding AbrirCartaCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:RelativeSource Self}}"
             WidthRequest="400"
             HorizontalOptions="Center">
             <CollectionView.ItemTemplate>

@@ -1,19 +1,14 @@
 using CardMind.Services.LocalServices;
+using CardMind.ViewModels;
 
 namespace CardMind.Views;
 
 public partial class ComunidadeView : ContentPage
 {
 	private SistemaRecompensa sistema = new();
-	public ComunidadeView()
+	public ComunidadeView(ComunidadeViewModel comunidadeViewModel)
 	{
 		InitializeComponent();
-		header.Dinheiro = sistema.Dinheiro.ToString();
-		header.Trofeus = sistema.Trofeus.ToString();
+		BindingContext = comunidadeViewModel;
 	}
-    protected override void OnAppearing()
-    {
-        header.Dinheiro = sistema.Dinheiro.ToString();
-        header.Trofeus = sistema.Trofeus.ToString();
-    }
 }

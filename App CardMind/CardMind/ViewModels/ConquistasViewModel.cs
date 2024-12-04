@@ -82,10 +82,15 @@ namespace CardMind.ViewModels
             {
                 sistemaRecompensa.Receber(conquista.Recompensa);
                 sistemaRecompensa.GanharTrofeu();
-                DinheiroUsuario = sistemaRecompensa.Dinheiro.ToString();
-                TrofeusUsuario = sistemaRecompensa.Trofeus.ToString();
+                Appearing();
                 Conquistas.Remove(conquista);
             }
+        }
+        [RelayCommand]
+        public void Appearing()
+        {
+            DinheiroUsuario = sistemaRecompensa.Dinheiro.ToString();
+            TrofeusUsuario = sistemaRecompensa.Trofeus.ToString();
         }
 
 

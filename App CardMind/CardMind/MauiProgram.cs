@@ -54,10 +54,14 @@ namespace CardMind
         {
             mauiAppBuilder.Services.AddSingleton<LoginViewModel>();
             mauiAppBuilder.Services.AddSingleton<BaralhosViewModel>();
+            mauiAppBuilder.Services.AddSingleton<BaralhoViewModel>();
             mauiAppBuilder.Services.AddSingleton<CadastroViewModel>();
             mauiAppBuilder.Services.AddSingleton<ConquistasViewModel>();
             mauiAppBuilder.Services.AddSingleton<LojaViewModel>();
             mauiAppBuilder.Services.AddSingleton<PerfilViewModel>();
+            mauiAppBuilder.Services.AddSingleton<ComunidadeViewModel>();
+
+
             return mauiAppBuilder;
         }
         public static MauiAppBuilder RegistrarViews(this MauiAppBuilder mauiAppBuilder)

@@ -16,13 +16,4 @@ public partial class ConquistasView : ContentPage
         BindingContext = viewModel;
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-
-    }
-    protected override void OnAppearing()
-    {
-        header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
-        header.Trofeus = sistemaRecompensa.Trofeus.ToString();
-    }
 }
