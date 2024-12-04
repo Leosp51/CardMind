@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardMind.Views.ComunidadeView"
-             xmlns:controls="clr-namespace:CardMind.Controls">
-    <VerticalStackLayout>
+             xmlns:controls="clr-namespace:CardMind.Controls"
+             >
+    <VerticalStackLayout
+        >
         <controls:Header
-            x:Name="header"/>
+                x:Name="header"/>
         <Label 
             Text="Comunidade"
             VerticalOptions="Center" 
@@ -13,5 +15,13 @@
         <SearchBar
             WidthRequest="250"
             HorizontalOptions="Center"/>
+        <Image
+            Source="arte_manutencao.png"
+            HeightRequest="300"/>
+        <Label
+            Text="Em Manutenção"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"/>
     </VerticalStackLayout>
 </ContentPage>

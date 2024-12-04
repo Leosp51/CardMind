@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CardMind.Services.ApiCardMind;
 using CardMind.Services.LocalServices;
+using CommunityToolkit.Maui.Views;
+using CardMind.Popups;
 
 namespace CardMind.ViewModels
 {
@@ -20,12 +22,16 @@ namespace CardMind.ViewModels
         [ObservableProperty]
         public ObservableCollection<EstiloBaralho> estilos;
         [ObservableProperty]
-        public int dinheiroUsuario;
+        public string dinheiroUsuario;
+        [ObservableProperty]
+        public string trofeusUsuario;
 
-        public LojaViewModel()
+        public LojaViewModel(SistemaRecompensa sistemaRecompensa)
         {
+            this.sistemaRecompensa = sistemaRecompensa;
             Estilos = new();
-            DinheiroUsuario = 0; 
+            DinheiroUsuario = "0"; 
+            TrofeusUsuario = "0";
             PegarEstilos();
             Estilos.Add(new EstiloBaralho
             {
@@ -67,9 +73,23 @@ namespace CardMind.ViewModels
         }
 
         [RelayCommand]
-        public void ComprarEstilo()
+        public async Task ComprarEstilo(EstiloBaralho estilo)
         {
-            
+            var popup = new RealizarCompra(estilo.Valor, estilo.NomeEstilo);
+            var result = await Shell.Current.CurrentPage.ShowPopupAsync(popup);
+            if (result != null)
+            {
+                if (!result.Equals(false))
+                    Appearing();
+                else
+                    Shell.Current.CurrentPage.ShowPopup(new CompraInvalida());
+            }
+        }
+        [RelayCommand]
+        public void Appearing()
+        {
+            DinheiroUsuario = sistemaRecompensa.Dinheiro.ToString();
+            TrofeusUsuario = sistemaRecompensa.Trofeus.ToString();
         }
     }
 }

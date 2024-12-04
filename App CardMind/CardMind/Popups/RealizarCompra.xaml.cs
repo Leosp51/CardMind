@@ -10,8 +10,9 @@ public partial class RealizarCompra : Popup
 	private string nomeEstilo = "";
 
 	SistemaRecompensa sistemaRecompensa = new SistemaRecompensa();
-	public RealizarCompra()
+	public RealizarCompra(SistemaRecompensa sistemaRecompensa)
 	{
+		this.sistemaRecompensa = sistemaRecompensa;
 		InitializeComponent();
 	}
 	public RealizarCompra(int valor, string nomeEstilo)

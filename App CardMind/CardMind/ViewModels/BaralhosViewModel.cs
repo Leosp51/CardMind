@@ -27,6 +27,10 @@ namespace CardMind.ViewModels
         public string item = "a";
         [ObservableProperty]
         public ObservableCollection<string> nomesBaralhos = new ObservableCollection<string>();
+        [ObservableProperty]
+        public string dinheiroUsuario;
+        [ObservableProperty]
+        public string trofeusUsuario;
 
         public Dictionary<string,Baralho> data = new Dictionary<string,Baralho>();
 
@@ -58,15 +62,22 @@ namespace CardMind.ViewModels
                     {"nome", nomeBaralho}
                 });
         }
+        [RelayCommand]
+        public void Apearing()
+        {
+            DinheiroUsuario = sistemaRecompensa.Dinheiro.ToString();
+            TrofeusUsuario = sistemaRecompensa.Trofeus.ToString();
+        }
         public BaralhosViewModel(IPopupService popupService,
                                  BaralhosService baralhosService,
-                                 INavigationService navigationService) 
+                                 INavigationService navigationService,
+                                 SistemaRecompensa sistemaRecompensa) 
         {
             baralhos = new ObservableCollection<Baralho>();
             this.navigationService = navigationService;
             this.popupService = popupService;
             this.baralhosService = baralhosService;
-
+            this.sistemaRecompensa = sistemaRecompensa;
         }
 
     }

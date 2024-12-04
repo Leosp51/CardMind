@@ -18,7 +18,7 @@
                     />
                 <Image
                     Source="moeda.png"
-                    HeightRequest="20"/>
+                    HeightRequest="10"/>
                 <Label
                     x:Name="lbValor"
                     FontSize="20"

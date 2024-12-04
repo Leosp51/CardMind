@@ -6,10 +6,18 @@
              xmlns:controls="clr-namespace:CardMind.Controls"
              xmlns:viewmodel="clr-namespace:CardMind.ViewModels"
              x:DataType="viewmodel:BaralhosViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              >
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding ApearingCommand}"/>
+    </ContentPage.Behaviors>
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"/>
+            x:Name="header"
+            Dinheiro="{Binding DinheiroUsuario}"
+            Trofeus="{Binding TrofeusUsuario}"/>
         <Label
             Text="Baralhos"
             HorizontalOptions="Center"

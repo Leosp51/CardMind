@@ -5,10 +5,18 @@
              xmlns:controls="clr-namespace:CardMind.Controls"
              xmlns:models="clr-namespace:CardMind.Models"
              xmlns:viewModel="clr-namespace:CardMind.ViewModels"
-             x:DataType="viewModel:LojaViewModel">
+             x:DataType="viewModel:LojaViewModel"
+             xmlns:toolkit ="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"/>
+            x:Name="header"
+            Dinheiro="{Binding DinheiroUsuario}"
+            Trofeus="{Binding TrofeusUsuario}"/>
         <Label
             Text="Loja"
             FontSize="Medium"
@@ -32,7 +40,8 @@
                             Text="{Binding Valor}"
                             FontSize="Micro"
                             HeightRequest="40"
-                            
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:LojaViewModel}}, Path=ComprarEstiloCommand}"
+                            CommandParameter="{Binding .}"
                             CornerRadius="10"/>
                     </VerticalStackLayout>
                 </DataTemplate>
