@@ -42,7 +42,7 @@ namespace CardMind.ViewModels
             //Aplicação de serviço de bd
         }
         [RelayCommand]
-        public void Validar()
+        public async Task Validar()
         {
             bool valido = true;
             Message = string.Empty;
@@ -74,8 +74,9 @@ namespace CardMind.ViewModels
             if (valido)
             {
 
-                _navigationService.NavigateToAsync("//Menu/Home");
-                //verificar se o post ocorreu como esperado
+                await _navigationService.NavigateToAsync("//Menu/Home");
+                //verificar se o post ocorreu como esperado; trocar depois código abaixo
+
             }
             Validado = valido;
         

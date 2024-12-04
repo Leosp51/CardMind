@@ -28,7 +28,7 @@ namespace CardMind.ViewModels
             if (Email == "lucas@gmail.com" && Password == "123")
                 await navigationService.NavigateToAsync("//Menu/Home");
             else
-                Erro = "Email ou senha inconrretos";
+                Erro = "Email ou senha incorretos";
         }
         public LoginViewModel(INavigationService navigationService, UsuarioService usuarioService)
         {

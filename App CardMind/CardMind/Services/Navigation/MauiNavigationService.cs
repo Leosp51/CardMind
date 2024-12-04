@@ -10,20 +10,14 @@ namespace CardMind.Services.Navigation
     {
         public async Task<Task> InitializeAsync()
         {
-            bool primeiraVez = Preferences.Default.Get<bool>("primeiraVez", true);
-            bool logado = Preferences.Default.Get<bool>("logado", false);
-
-            if (primeiraVez)
-            {
-                Preferences.Set("primeiraVez", false);
+            string status = Preferences.Default.Get<string>("statusUsuario", "primeiraVez");
+            if (status == "primeiraVez")
                 return NavigateToAsync("//Cadastro");
-            }
-            if (!logado)
-            {
-                return NavigateToAsync("//Login");
-            }
-            else
+            else if (status == "cadastrado")
                 return NavigateToAsync("//Menu/Home");
+            else
+                return NavigateToAsync("//Login");
+
         }
 
         public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)

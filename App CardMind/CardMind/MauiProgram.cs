@@ -1,4 +1,5 @@
 ﻿using CardMind.Controls;
+using CardMind.Popups;
 using CardMind.Services.ApiCardMind;
 using CardMind.Services.LocalServices;
 using CardMind.Services.Navigation;
@@ -43,6 +44,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddSingleton<ConquistasService>();
             mauiAppBuilder.Services.AddSingleton<BaralhosService>();
             mauiAppBuilder.Services.AddSingleton<SistemaRecompensa>();
+            mauiAppBuilder.Services.AddSingleton<AutenticationService>();
 
             mauiAppBuilder.Services.AddSingleton<BaralhosLocalService>();
 
@@ -69,6 +71,8 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<CartaTextoView>();
             mauiAppBuilder.Services.AddTransient<CartaPerguntaView>();
             mauiAppBuilder.Services.AddTransient<CadastroView>();
+            //popups
+            mauiAppBuilder.Services.AddTransientPopup<RealizarCompra, LojaViewModel>();
 
             mauiAppBuilder.Services.AddSingleton<BaralhosView>();
             mauiAppBuilder.Services.AddSingleton<PerfilView>();
