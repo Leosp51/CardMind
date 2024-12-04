@@ -17,6 +17,7 @@ namespace CardMind.ViewModels
     public partial class CadastroViewModel : ObservableObject
     {
         private INavigationService _navigationService;
+        private AutenticationService autenticationService;
 
         [ObservableProperty]
         public Usuario usuario = new();
@@ -31,10 +32,11 @@ namespace CardMind.ViewModels
 
         private UsuarioService usuarioService;
 
-        public CadastroViewModel(UsuarioService usuarioService,INavigationService navigationService)
+        public CadastroViewModel(UsuarioService usuarioService,INavigationService navigationService, AutenticationService autenticationService)
         {
             this.usuarioService = usuarioService;
             this._navigationService = navigationService;
+            this.autenticationService = autenticationService;
         }
         //[RelayCommand]
         public void Adicionar(Usuario user)
@@ -74,12 +76,12 @@ namespace CardMind.ViewModels
             if (valido)
             {
 
-                await _navigationService.NavigateToAsync("//Menu/Home");
                 //verificar se o post ocorreu como esperado; trocar depois código abaixo
+                autenticationService.InserirUsuario(Usuario.NomeUsuario, Usuario.Email, Usuario.Senha);
 
+                await _navigationService.NavigateToAsync("//Menu/Home");
             }
             Validado = valido;
-        
         }
     }
 }

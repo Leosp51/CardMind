@@ -79,7 +79,7 @@
                 HorizontalOptions="Center"
                 BackgroundColor="Gray"
                 TextColor="White"
-                HeightRequest="500"
+                WidthRequest="500"
                 Command="{Binding LogoutCommand}"/>
         </Border>
         

@@ -73,6 +73,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<CadastroView>();
             //popups
             mauiAppBuilder.Services.AddTransientPopup<RealizarCompra, LojaViewModel>();
+            
 
             mauiAppBuilder.Services.AddSingleton<BaralhosView>();
             mauiAppBuilder.Services.AddSingleton<PerfilView>();

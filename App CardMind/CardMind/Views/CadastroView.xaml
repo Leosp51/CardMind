@@ -32,6 +32,7 @@
         <Button
             Text="Registrar-se"
             Margin="30"
+            TextColor="Red"
             Command="{Binding ValidarCommand}"/>
         <Label
             Text="{Binding Message}"

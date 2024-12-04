@@ -14,6 +14,7 @@ namespace CardMind.ViewModels
     {
         private readonly INavigationService navigationService;
         private UsuarioService usuarioService;
+        private AutenticationService autenticationService;
 
         [ObservableProperty]
         public string email;
@@ -25,8 +26,10 @@ namespace CardMind.ViewModels
         [RelayCommand]
         public async Task SignIn()
         {
-            if (Email == "lucas@gmail.com" && Password == "123")
+            if (Email == "lucas@gmail.com" && Password == "123"){
+                Preferences.Set("statusUsuario", "cadastro");
                 await navigationService.NavigateToAsync("//Menu/Home");
+            }
             else
                 Erro = "Email ou senha incorretos";
         }

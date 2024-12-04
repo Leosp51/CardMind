@@ -26,6 +26,7 @@ namespace CardMind.Services.ApiCardMind
             Preferences.Set("nomeUsuario", nome);
             Preferences.Set("emailUsuario", email);
             Preferences.Set("senhaUsuario", senha);
+            Preferences.Set("statusUsuario","cadastrado");
         }
     }
 }

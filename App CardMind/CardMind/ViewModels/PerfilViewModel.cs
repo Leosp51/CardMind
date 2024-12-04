@@ -39,6 +39,7 @@ namespace CardMind.ViewModels
         [RelayCommand]
         public async Task Logout()
         {
+            Preferences.Set("statusUsuario", "deslogado");
             await navigationService.NavigateToAsync("//Login");
         }
 
