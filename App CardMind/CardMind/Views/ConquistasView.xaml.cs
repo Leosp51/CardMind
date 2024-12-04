@@ -12,9 +12,9 @@ public partial class ConquistasView : ContentPage
     public ConquistasView(ConquistasViewModel conquistasViewModel)
 	{
 		viewModel = conquistasViewModel;
-		BindingContext = viewModel;
 		InitializeComponent();
-	}
+        BindingContext = viewModel;
+    }
 
     private void Button_Clicked(object sender, EventArgs e)
     {

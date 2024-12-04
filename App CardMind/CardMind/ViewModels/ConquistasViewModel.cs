@@ -8,30 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using CardMind.Services.ApiCardMind;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
+using CardMind.Services.LocalServices;
 
 namespace CardMind.ViewModels
 {
     public partial class ConquistasViewModel:ObservableObject
     {
         private ConquistasService conquistasService;
+        private SistemaRecompensa sistemaRecompensa;
 
         [ObservableProperty]
         public ObservableCollection<Conquista> conquistas = new();
+        [ObservableProperty]
+        public string dinheiroUsuario;
+        [ObservableProperty]
+        public string trofeusUsuario;
 
-        public ConquistasViewModel()
+        public ConquistasViewModel(SistemaRecompensa sistema)
         {
+            sistemaRecompensa = sistema;
             PegarConquistas();
         }
 
         public void PegarConquistas()
         {
-
+            //colocar o serviço no lugar do código abaixo
             Conquistas.Add(new Conquista
             {
                 CodConquista = 1,
                 NomeConquista = "Novato",
                 Objetivo = "Entre no app pela primeira vez",
-                Recompensa = 2,
+                Recompensa = 10,
                 IsFinish = true,
                 Cor = "Red"
             });
@@ -40,7 +48,7 @@ namespace CardMind.ViewModels
                 CodConquista = 2,
                 NomeConquista = "Comprometimento",
                 Objetivo = "Entre no app 5 vezes em um único dia",
-                Recompensa = 5,
+                Recompensa = 20,
                 IsFinish = false,
                 Cor = "Gray"
             });
@@ -49,7 +57,7 @@ namespace CardMind.ViewModels
                 CodConquista = 3,
                 NomeConquista = "Viciado",
                 Objetivo = "Entre no app 10 vezes em um único dia",
-                Recompensa = 10,
+                Recompensa = 30,
                 IsFinish = false,
                 Cor = "Gray"
             });
@@ -58,7 +66,7 @@ namespace CardMind.ViewModels
                 CodConquista = 4,
                 NomeConquista = "Mestre da Criação",
                 Objetivo = "Crie 20 baralhos",
-                Recompensa = 2,
+                Recompensa = 50,
                 IsFinish = false,
                 Cor = "Red"
             });
@@ -67,11 +75,19 @@ namespace CardMind.ViewModels
         {
             
         }
-
+        [RelayCommand]
         public void GanharRecompensa(Conquista conquista)
         {
-
+            if(conquista.Cor == "Red")
+            {
+                sistemaRecompensa.Receber(conquista.Recompensa);
+                sistemaRecompensa.GanharTrofeu();
+                DinheiroUsuario = sistemaRecompensa.Dinheiro.ToString();
+                TrofeusUsuario = sistemaRecompensa.Trofeus.ToString();
+                Conquistas.Remove(conquista);
+            }
         }
+
 
     }
 }
