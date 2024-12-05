@@ -29,7 +29,7 @@ namespace CardMind.ViewModels
         [RelayCommand]
         public async Task ShowPopup()
         {
-            var popup = new CriarBaralho();
+            var popup = new PopupTest();
             var result = await Shell.Current.CurrentPage.ShowPopupAsync(popup);
             if (result != null) {
                 var baralho = (Baralho)result;

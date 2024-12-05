@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardMind.Views.CartaTextoView"
              Title="CartaTextoView"
-             xmlns:controls="clr-namespace:CardMind.Controls">
+             xmlns:controls="clr-namespace:CardMind.Controls"
+             xmlns:vm="clr-namespace:CardMind.ViewModels"
+             x:DataType="vm:CartaTextoViewModel">
     <VerticalStackLayout>
         <controls:Header
-            x:Name="header"/>
+            x:Name="header"
+            Dinheiro="{Binding DinheiroUsuario}"
+            Trofeus="{Binding TrofeusUsuario}"/>
         <Frame
             Padding="50"
             BorderColor="Red">
@@ -14,6 +18,7 @@
                 <Label
                     x:Name="lbNomeCarta"
                     HorizontalOptions="Center"
+                    Text="{Binding CartaTexto.NomeCarta}"
                     FontAttributes="Bold"
                     FontSize="Large"/>
                 <Frame
@@ -23,6 +28,7 @@
                     <Label
                         x:Name="lbTexto"
                         FontSize="20"
+                        Text="{Binding CartaTexto.Texto}"
                         MaximumWidthRequest="250"
                     />
                 </Frame>

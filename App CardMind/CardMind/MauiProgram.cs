@@ -60,6 +60,8 @@ namespace CardMind
             mauiAppBuilder.Services.AddSingleton<LojaViewModel>();
             mauiAppBuilder.Services.AddSingleton<PerfilViewModel>();
             mauiAppBuilder.Services.AddSingleton<ComunidadeViewModel>();
+            mauiAppBuilder.Services.AddSingleton<CartaPerguntaViewModel>();
+            mauiAppBuilder.Services.AddSingleton<CartaTextoViewModel>();
 
 
             return mauiAppBuilder;
@@ -75,6 +77,7 @@ namespace CardMind
             mauiAppBuilder.Services.AddTransient<CartaTextoView>();
             mauiAppBuilder.Services.AddTransient<CartaPerguntaView>();
             mauiAppBuilder.Services.AddTransient<CadastroView>();
+            mauiAppBuilder.Services.AddTransient<ComunidadeView>();
             //popups
             mauiAppBuilder.Services.AddTransientPopup<RealizarCompra, LojaViewModel>();
             

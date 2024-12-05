@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:CardMind"
     Shell.FlyoutBehavior="Disabled"
     xmlns:views="clr-namespace:CardMind.Views"
+    xmlns:pages="clr-namespace:CardMind.Views"
     Title="CardMind"
     Shell.TabBarBackgroundColor="Red"
     Shell.TabBarForegroundColor="#A001ff"

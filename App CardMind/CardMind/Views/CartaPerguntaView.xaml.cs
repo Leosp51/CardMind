@@ -1,11 +1,13 @@
 using CardMind.Models;
 using CardMind.Services.LocalServices;
 using CardMind.Services.Navigation;
+using CardMind.ViewModels;
 
 namespace CardMind.Views;
 [QueryProperty(nameof(Carta), "CartaPergunta")]
 public partial class CartaPerguntaView : ContentPage
 {
+	private CartaPerguntaViewModel _cartaPerguntaViewModel;
 	private CartaPergunta cartaPergunta;
 	public CartaPergunta Carta
 	{
@@ -13,36 +15,21 @@ public partial class CartaPerguntaView : ContentPage
 		set
 		{
 			cartaPergunta = value;
-			UpdateUI();
+			_cartaPerguntaViewModel.CartaPergunta = cartaPergunta;
+			BindingContext = _cartaPerguntaViewModel;
 		}
 	}
 
 	private SistemaRecompensa sistemaRecompensa = new();
 	private INavigationService navigationService;
 
-	public CartaPerguntaView(INavigationService navigationService)
+	public CartaPerguntaView(CartaPerguntaViewModel cartaPerguntaViewModel)
 	{
-		this.navigationService = navigationService;
+		_cartaPerguntaViewModel = cartaPerguntaViewModel;
+		BindingContext = cartaPerguntaViewModel;
 		InitializeComponent();
 	}
-	void UpdateUI()
-	{
-		lbNomeCarta.Text = cartaPergunta.NomeCarta;
-		lbPergunta.Text = cartaPergunta.Pergunta;
-	}
+	
 
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-		navigationService.NavigateToAsync("CartaResposta", new Dictionary<string, object>
-		{
-			{
-				"CartaPergunta", Carta
-			}
-		});
-    }
-    protected override void OnAppearing()
-    {
-        header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
-        header.Trofeus = sistemaRecompensa.Trofeus.ToString();
-    }
+    
 }

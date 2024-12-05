@@ -82,6 +82,8 @@
                 WidthRequest="500"
                 Command="{Binding LogoutCommand}"/>
         </Border>
-        
+        <Button
+            Text="Click me"
+            Command="{Binding ShowPopupCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

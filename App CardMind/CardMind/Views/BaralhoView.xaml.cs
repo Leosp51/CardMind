@@ -8,11 +8,24 @@ using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 
 namespace CardMind.Views;
+
 public partial class BaralhoView : ContentPage
 {
+	private BaralhoViewModel baralhoViewModel;
 
+
+	private string nome;
+	public string Nome
+	{
+		get { return nome; }
+		set {
+			baralhoViewModel.NomeBaralho = nome = value;
+			BindingContext = baralhoViewModel;
+		}
+	}
 	public BaralhoView( BaralhoViewModel baralhoViewModel)
 	{
+		this.baralhoViewModel = baralhoViewModel;
 		InitializeComponent();
 		BindingContext = baralhoViewModel;
 	}

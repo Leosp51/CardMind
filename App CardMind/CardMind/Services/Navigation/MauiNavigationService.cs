@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardMind.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace CardMind.Services.Navigation
     {
         public async Task<Task> InitializeAsync()
         {
+            /*
             string status = Preferences.Default.Get<string>("statusUsuario", "primeiraVez");
             if (status == "primeiraVez")
                 return NavigateToAsync("//Cadastro");
@@ -17,6 +19,13 @@ namespace CardMind.Services.Navigation
                 return NavigateToAsync("//Menu/Home");
             else
                 return NavigateToAsync("//Login");
+            */
+            CartaTexto carta = new CartaTexto();
+            carta.NomeCarta = "tocd";
+            carta.Texto = "dsf";
+            return NavigateToAsync("//CartaPergunta", new Dictionary<string, object>
+            {
+                { "CartaTexto", carta } });
 
         }
 

@@ -117,6 +117,9 @@
 	  <MauiXaml Update="Popups\CriarCarta.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popups\PopupTest.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popups\RealizarCompra.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

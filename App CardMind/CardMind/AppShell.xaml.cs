@@ -11,7 +11,6 @@ namespace CardMind
             _navigationService = navigationService;
             Routing.RegisterRoute("Baralho", typeof(BaralhoView));
             Routing.RegisterRoute("CartaTexto", typeof(CartaTextoView));
-            Routing.RegisterRoute("CartaPergunta",typeof(CartaPerguntaView));
             Routing.RegisterRoute("CartaResposta", typeof(CartaResposta));
             InitializeComponent();
         }
@@ -20,6 +19,8 @@ namespace CardMind
             base.OnParentSet();
             if (Parent is not null)
             {
+
+                Routing.RegisterRoute("CartaPergunta", typeof(CartaPerguntaView));
                 await _navigationService.InitializeAsync();
             }
         }

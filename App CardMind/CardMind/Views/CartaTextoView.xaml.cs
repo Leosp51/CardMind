@@ -1,11 +1,14 @@
 using CardMind.Models;
 using CardMind.Services.LocalServices;
+using CardMind.ViewModels;
 
 namespace CardMind.Views;
 
 [QueryProperty(nameof(Carta),"CartaTexto")]
 public partial class CartaTextoView : ContentPage
 {
+	private CartaTextoViewModel cartaTextoViewModel;
+
 	private CartaTexto cartaTexto;
 	public CartaTexto Carta
 	{
@@ -13,25 +16,18 @@ public partial class CartaTextoView : ContentPage
 		set
 		{
 			cartaTexto = value;
-			UpdateUI();
+			cartaTextoViewModel.CartaTexto = cartaTexto;
+			BindingContext = cartaTextoViewModel;
 		}
 	}
 
     private SistemaRecompensa sistemaRecompensa = new();
 
-    public CartaTextoView()
+    public CartaTextoView(CartaTextoViewModel cartaTextoViewModel)
 	{
 		InitializeComponent();
+		this.cartaTextoViewModel = cartaTextoViewModel;
+		BindingContext = cartaTextoViewModel;
+
 	}
-	void UpdateUI()
-	{
-		lbNomeCarta.Text = Carta.NomeCarta;
-		lbTexto.Text = Carta.Texto;
-		
-	}
-    protected override void OnAppearing()
-    {
-        header.Dinheiro = sistemaRecompensa.Dinheiro.ToString();
-        header.Trofeus = sistemaRecompensa.Trofeus.ToString();
-    }
 }

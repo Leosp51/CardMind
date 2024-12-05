@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardMind.Views.CartaPerguntaView"
-             xmlns:controls="clr-namespace:CardMind.Controls">
+             xmlns:controls="clr-namespace:CardMind.Controls"
+             xmlns:vm="clr-namespace:CardMind.ViewModels"
+             x:DataType="vm:CartaPerguntaViewModel">
     <VerticalStackLayout>
         <controls:Header
             x:Name="header"/>
@@ -13,6 +15,7 @@
                 <Label
                     x:Name="lbNomeCarta"
                     FontSize="Large"
+                    Text="{Binding CartaPergunta.NomeCarta}"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"/>
                 <Frame
@@ -20,6 +23,7 @@
                     BorderColor="Red">
                     <Label
                         x:Name="lbPergunta"
+                        Text="{Binding CartaPergunta.Pergunta}"
                         FontSize="20"/>
                 </Frame>
 
@@ -30,7 +34,7 @@
                     TextColor="White"
                     BackgroundColor="Red"
                     VerticalOptions="End"
-                    Clicked="Button_Clicked"
+                    Command="{Binding VerRespostaCommand}"
                     Padding="5"/>
             </VerticalStackLayout>
         </Border>
